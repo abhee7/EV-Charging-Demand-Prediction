@@ -1,0 +1,27 @@
+node_modules/
+dist/
+__pycache__/
+*.pyc
+*.tsbuildinfo
+.pytest_cache/
+.env
+.env.local
+.venv/
+
+# --- added for GitHub upload ---
+# Template licence forbids publishing the template source publicly.
+chargecast-landing/
+# Superseded / backup copies of the dashboard.
+chargecast_v1_backup/
+chargecast_v2_test/
+chargecast_v2_research_integrity_test/
+chargecast-web_dark_backup/
+# Raw ACN-Data sessions: redistribution terms unclear and contains user IDs.
+# Re-create with: python download_acndata.py (needs ACN_API_TOKEN).
+data/raw/
+# Local tooling / secrets / build output
+.agents/
+.claude/
+*.log
+dist/
+requirements-freeze.txt

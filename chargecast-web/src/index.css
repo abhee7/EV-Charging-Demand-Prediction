@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans antialiased;
+    /* Soft pastel glows, as on the template hero. */
+    background-image:
+      radial-gradient(900px 520px at -4% -10%, rgba(251, 255, 225, 0.9), transparent 62%),
+      radial-gradient(900px 560px at 100% 0%, rgba(138, 125, 255, 0.12), transparent 60%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight;
+  }
+
+  /* Metrics must align in columns. */
+  .tnum {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
+  }
+
+  ::selection {
+    background: rgba(79, 70, 229, 0.18);
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-signal/70 ring-offset-2 ring-offset-canvas rounded;
+  }
+
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(17, 24, 39, 0.16);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(79, 70, 229, 0.4); background-clip: content-box; }
+}
+
+@layer components {
+  .glass {
+    @apply rounded-2xl border border-gray-200 bg-white shadow-glass;
+  }
+  .hairline {
+    @apply border-black/[0.08];
+  }
+  /* Template "btn": indigo to violet gradient. */
+  .btn-gradient {
+    @apply bg-gradient-to-r from-indigo-600 to-[#8A7DFF] text-white;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

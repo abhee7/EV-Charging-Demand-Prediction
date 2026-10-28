@@ -1,0 +1,5 @@
+Method,Period,Hours,Coverage,Avg_Width_kWh,Below_lower,Above_upper
+Quantile (uncalibrated),Non-peak,972,0.7366,28.8093,0.2603,0.0031
+Quantile (uncalibrated),Peak (actual >= test-period P90),108,0.4907,35.3534,0.0,0.5093
+Conformalized,Non-peak,972,0.93,33.6452,0.0689,0.001
+Conformalized,Peak (actual >= test-period P90),108,0.7222,41.6677,0.0,0.2778

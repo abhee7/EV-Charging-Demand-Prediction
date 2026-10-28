@@ -1,0 +1,5 @@
+Experiment,Objective,Fit_data,Fit_rows,Calibration,Test
+Baseline XGBoost (squared error),reg:squarederror,train+validation,5858,none,"45 windows / 1,080 h"
+Quantile XGBoost,"reg:quantileerror [0.05,0.5,0.95]",train+validation,5858,none,"same 45 windows / 1,080 h"
+Conformalized quantile XGBoost,"reg:quantileerror [0.05,0.5,0.95]",train only,4765,"validation 45 windows / 1,080 scores","same 45 windows / 1,080 h"
+Rolling-origin XGBoost,reg:squarederror,"all rows before each window (expanding, refit per day)","4,765 to 6,925",none,91 daily windows (Nov 24 - Feb 22)

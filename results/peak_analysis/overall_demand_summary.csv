@@ -1,0 +1,2 @@
+observations,mean_hourly_demand_kWh,median_hourly_demand_kWh,std_hourly_demand_kWh,minimum_hourly_demand_kWh,peak_hourly_demand_kWh,total_reconstructed_energy_kWh,zero_demand_hours,peak_to_average_ratio
+7288,21.352388762280984,14.888378507480931,20.24966246039173,0.0,136.35813607585334,155616.20929950383,486,6.386083430474539

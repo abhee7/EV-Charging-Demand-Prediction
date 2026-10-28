@@ -1,0 +1,3 @@
+Subset,MAE,RMSE,R2,hours
+All 91 folds,6.2158,9.1861,0.6718,2184
+45 folds in original test period,6.0064,8.4479,0.7277,1080

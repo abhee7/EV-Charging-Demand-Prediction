@@ -1,0 +1,2 @@
+xgboost_version,nominal_coverage,empirical_coverage,coverage_minus_nominal,mean_interval_width,median_interval_width,median_pred_MAE,median_pred_RMSE,n_observations,n_windows,below_lower_pct,above_upper_pct,quantile_crossings_before_sorting,peak_threshold_P90_kWh,train_rows
+3.4.1,0.9,0.712037037037037,-0.187962962962963,29.463704681089492,28.82451021671295,7.200564875172811,10.327208006910437,1080,45,0.23425925925925925,0.053703703703703705,0,37.4620130091287,5858

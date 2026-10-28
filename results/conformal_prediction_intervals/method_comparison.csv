@@ -1,0 +1,4 @@
+Method,Nominal_Coverage,Actual_Coverage,Average_Width,MAE,RMSE
+Original squared-error XGBoost,n/a (point forecast),n/a,n/a,6.492866738412651,9.055166228379006
+"Quantile XGBoost (5/50/95, uncalibrated)",0.9,0.712037037037037,29.46370468108949,7.200564875172811,10.327208006910436
+Conformalized Quantile XGBoost,0.9,0.9092592592592592,34.44745138640757,7.04589058384929,9.614481680517324
