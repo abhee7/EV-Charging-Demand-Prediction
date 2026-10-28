@@ -224,7 +224,7 @@ export default function Analytics() {
                 )}
                 <p className="mt-1 text-xs text-muted">
                   Dotted lines mark the 95% significance band. Lags 1, 24 and
-                  168 are highlighted in cyan; the selected lag is amber.
+                  168 are highlighted in indigo; the selected lag is orange.
                 </p>
               </>
             )}

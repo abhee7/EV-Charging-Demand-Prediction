@@ -17,17 +17,18 @@ prediction. A read-only dashboard (**ChargeCast**) presents the verified results
 ## Contents
 
 1. [Key results](#key-results)
-2. [What the project does](#what-the-project-does)
-3. [Dataset](#dataset)
-4. [Method in brief](#method-in-brief)
-5. [Repository layout](#repository-layout)
-6. [Setup](#setup)
-7. [Reproducing the results](#reproducing-the-results)
-8. [ChargeCast dashboard](#chargecast-dashboard)
-9. [Research integrity and audit](#research-integrity-and-audit)
-10. [Limitations](#limitations)
-11. [Data attribution and citation](#data-attribution-and-citation)
-12. [License](#license)
+2. [Screenshots and figures](#screenshots-and-figures)
+3. [What the project does](#what-the-project-does)
+4. [Dataset](#dataset)
+5. [Method in brief](#method-in-brief)
+6. [Repository layout](#repository-layout)
+7. [Setup](#setup)
+8. [Reproducing the results](#reproducing-the-results)
+9. [ChargeCast dashboard](#chargecast-dashboard)
+10. [Research integrity and audit](#research-integrity-and-audit)
+11. [Limitations](#limitations)
+12. [Data attribution and citation](#data-attribution-and-citation)
+13. [License](#license)
 
 ---
 
@@ -72,6 +73,49 @@ The calibration offset is 2.63 kWh, learned from validation data only. Peak
 hours (actual ≥ 37.46 kWh) remain under-covered: 72.2% against 93.0% for
 non-peak hours. These are *empirical* coverages on one test period, not
 guarantees.
+
+---
+
+## Screenshots and figures
+
+### ChargeCast dashboard (React + FastAPI, read-only)
+
+<p align="center">
+  <img src="docs/screenshots/dashboard-overview.png" width="49%" alt="Overview page: demand ribbon, daily profile and weekday vs weekend pattern"/>
+  <img src="docs/screenshots/dashboard-model-lab.png" width="49%" alt="Model Lab page: metrics for each model and Diebold-Mariano tests"/>
+</p>
+<p align="center">
+  <img src="docs/screenshots/dashboard-peak.png" width="49%" alt="Peak Intelligence page: thresholds and peak detection by model"/>
+  <img src="docs/screenshots/dashboard-explainability.png" width="49%" alt="Explainability page: SHAP feature importance"/>
+</p>
+
+<details>
+<summary>More dashboard pages</summary>
+
+<p align="center">
+  <img src="docs/screenshots/dashboard-forecast.png" width="49%" alt="Forecast page: stored 24-hour forecast replay for one test window"/>
+  <img src="docs/screenshots/dashboard-robustness.png" width="49%" alt="Robustness page: primary vs arrival-hour target construction"/>
+</p>
+
+</details>
+
+The dashboard only reads the stored result files; it never retrains a model or
+writes to `results/`. See [ChargeCast dashboard](#chargecast-dashboard) for how to run it.
+
+### Result figures
+
+<p align="center">
+  <img src="results/figures/06_model_metric_comparison.png" width="49%" alt="Test-period MAE and RMSE for the five models"/>
+  <img src="results/rolling_origin/figures/rolling_origin_rmse.png" width="49%" alt="RMSE of each of the 91 rolling-origin daily windows"/>
+</p>
+<p align="center">
+  <img src="results/conformal_prediction_intervals/figures/conformal_prediction_intervals.png" width="49%" alt="Conformalized 90 percent prediction intervals over the last seven test days"/>
+  <img src="results/conformal_prediction_intervals/figures/conformal_coverage_by_horizon.png" width="49%" alt="Empirical coverage at each forecast horizon, conformalized versus uncalibrated"/>
+</p>
+
+*Top left:* test-period error of the five models. *Top right:* rolling-origin RMSE per
+day. *Bottom left:* calibrated 90% intervals (last 7 test days; misses are marked).
+*Bottom right:* coverage by forecast horizon against the 90% target.
 
 ---
 
@@ -154,6 +198,7 @@ re-create the raw file, see [Re-downloading the raw data](#re-downloading-the-ra
 ├── data/processed/                hourly series and model features
 ├── results/                       metrics, predictions, figures and experiment outputs
 │   └── final_audit/               FINAL_AUDIT_REPORT.md, FINAL_PROJECT_REPORT.md, tables, presentation (.pptx)
+├── docs/screenshots/              dashboard screenshots used in this README
 ├── chargecast/                    Streamlit dashboard (original)
 ├── chargecast-api/                FastAPI backend (read-only)
 ├── chargecast-web/                React dashboard

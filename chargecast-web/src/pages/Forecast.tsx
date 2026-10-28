@@ -126,7 +126,7 @@ export default function Forecast() {
 
       <SectionHeading
         title="Actual against prediction"
-        hint="Observed in cyan, forecast in amber"
+        hint="Observed in indigo, forecast in orange"
       />
       <Card>
         <QueryBoundary
