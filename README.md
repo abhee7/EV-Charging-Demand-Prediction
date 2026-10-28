@@ -1,5 +1,9 @@
 # EV Charging Demand Prediction Using Machine Learning and Time-Series Analysis
 
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![Python 3.13](https://img.shields.io/badge/Python-3.13-3776AB.svg)
+![Data: ACN-Data](https://img.shields.io/badge/Data-ACN--Data%20(Caltech)-informational.svg)
+
 Hourly EV charging demand forecasting for a Caltech charging site (ACN-Data), with
 24-hour-ahead recursive forecasts, a rolling-origin robustness check, and prediction
 intervals whose real coverage was measured and then calibrated with conformal
@@ -23,6 +27,7 @@ prediction. A read-only dashboard (**ChargeCast**) presents the verified results
 9. [Research integrity and audit](#research-integrity-and-audit)
 10. [Limitations](#limitations)
 11. [Data attribution and citation](#data-attribution-and-citation)
+12. [License](#license)
 
 ---
 
@@ -148,7 +153,7 @@ re-create the raw file, see [Re-downloading the raw data](#re-downloading-the-ra
 ├── train_models_arrival_hour.py   alternative demand definition (arrival-hour variant)
 ├── data/processed/                hourly series and model features
 ├── results/                       metrics, predictions, figures and experiment outputs
-│   └── final_audit/               FINAL_AUDIT_REPORT.md, FINAL_PROJECT_REPORT.md, tables
+│   └── final_audit/               FINAL_AUDIT_REPORT.md, FINAL_PROJECT_REPORT.md, tables, presentation (.pptx)
 ├── chargecast/                    Streamlit dashboard (original)
 ├── chargecast-api/                FastAPI backend (read-only)
 ├── chargecast-web/                React dashboard
@@ -330,3 +335,16 @@ This project uses ACN-Data. If you use this work, please cite the dataset:
 
 Please also consult the [ACN-Data site](https://ev.caltech.edu/dataset) for
 its current terms of use before redistributing any data.
+
+---
+
+## License
+
+The code in this repository is released under the [MIT License](LICENSE).
+This licence covers the authors' code and documents only. It does **not** cover
+the ACN-Data dataset or anything derived from it by third parties; please read the
+[ACN-Data terms](https://ev.caltech.edu/dataset) before redistributing data.
+
+To cite this repository, use the "Cite this repository" button on GitHub
+(generated from [CITATION.cff](CITATION.cff)) together with the ACN-Data
+citation above.

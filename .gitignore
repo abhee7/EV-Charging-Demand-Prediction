@@ -25,3 +25,6 @@ data/raw/
 *.log
 dist/
 requirements-freeze.txt
+
+# Personal presentation / viva preparation notes (not part of the published project)
+results/final_audit/How_to_Present_the_Project_to_Your_Guide.docx
