@@ -1,0 +1,31 @@
+# EV Charging Demand Prediction - research / modelling stack.
+# Install with:  pip install -r requirements.txt
+#
+# Lower bounds are the oldest versions the code needs; the additional
+# experiments (rolling_origin_xgboost.py, prediction_intervals_xgboost.py,
+# conformal_intervals_xgboost.py) were run with:
+#   xgboost 3.4.1, pandas 3.0.6, numpy 2.5.3, scikit-learn 1.9.1,
+#   scipy 1.18.1, matplotlib 3.11.2   (Python 3.13)
+# Run `pip freeze` to record your own environment (see README, Reproducibility).
+#
+# The dashboards have their own files:
+#   chargecast-api/requirements.txt   FastAPI backend
+#   chargecast/requirements.txt       Streamlit dashboard
+#   chargecast-web/package.json       React dashboard (npm install)
+
+# Data handling
+pandas>=2.2          # lowercase "h" hourly frequency alias needs pandas >= 2.2
+numpy>=1.26
+
+# Models and evaluation
+xgboost>=2.0         # quantile objective (reg:quantileerror) needs XGBoost >= 2.0
+scikit-learn>=1.3    # Linear Regression, Random Forest
+statsmodels>=0.14    # SARIMAX + Fourier (train_sarima.py)
+scipy>=1.11          # Diebold-Mariano tests (run_dm_tests.py)
+
+# Explainability and figures
+shap>=0.44           # SHAP feature importance (run_shap_analysis.py)
+matplotlib>=3.8      # figures
+
+# Raw data download (download_acndata.py only)
+requests>=2.31
